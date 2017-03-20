@@ -29,7 +29,8 @@ public class SpriteShowDrawer : PropertyDrawer
 
 	public override void OnGUI (Rect position, SerializedProperty property, GUIContent label)
 	{
-		Texture2D myText = SpriteUtility.GetSpriteTexture(property.objectReferenceValue, false);
+        EditorGUI.ObjectField(position, property);
+		Texture2D myText = SpriteUtility.GetSpriteTexture((Sprite)property.objectReferenceValue, false);
 		GUI.Label(position, myText);
 	}
 
